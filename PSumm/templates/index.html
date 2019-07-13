@@ -1,0 +1,21 @@
+<!doctype html>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+<html>
+<body>
+  {% block content %}
+    <h3>
+      PSumm
+      <small class="text-muted">Transparent Text Summarization</small>
+    </h3>
+    <p class="lead">
+      Enter text here:
+    </p>
+
+    <form method="GET" action="/summarize">
+      {{form|crispy}}
+      <button type="submit" class="btn btn-dark btn-lg btn-block">Summarize</button>
+    </form>
+  {% endblock %}
+</body>
+</html>
