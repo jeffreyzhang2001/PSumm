@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from .forms import UnsummarizedTextForm
-from .test import uppercase
+from .utils import OriginalTextHandler
 
 # Create your views here.
 def index(request):
@@ -10,7 +10,8 @@ def index(request):
 
 def summarize(request):
     original_text = request.GET.get('unsummarized_text')
-    nice = uppercase(original_text)
-    args = {'summarized_text': original_text, 'ok' :nice}
+    original_text_object = OriginalTextHandler(original_text)
+    summarized_text = original_text_object.summarize()
+    args = {'summarized_text': summarized_text}
 
     return render(request, 'summary.html', args)

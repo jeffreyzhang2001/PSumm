@@ -3,9 +3,30 @@
 <html>
 <body>
     {% block content %}
-        <h1>
-            Summary: {{ summarized_text }} {{ok}}
-        </h1>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-5">Luhn Summary</h1>
+          <p class="lead">{{ summarized_text.0 }}</p>
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-5">LSA Summary</h1>
+          <p class="lead">{{ summarized_text.1 }}</p>
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-5">LexRank Summary</h1>
+          <p class="lead">{{ summarized_text.2 }}</p>
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-5">KL Summary</h1>
+          <p class="lead">{{ summarized_text.3 }}</p>
+        </div>
+      </div>
     {% endblock %}
 </body>
 </html>
