@@ -12,7 +12,8 @@
       Enter text here:
     </p>
 
-    <form method="GET" action="/summarize">
+    <form method="POST" action="summarize/">
+      {% csrf_token %}
       {{form|crispy}}
       <button type="submit" class="btn btn-dark btn-lg btn-block">Summarize</button>
     </form>

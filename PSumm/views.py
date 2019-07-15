@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'index.html', {'form': UnsummarizedTextForm()})
 
 def summarize(request):
-    original_text = request.GET.get('unsummarized_text')
+    original_text = request.POST.get('unsummarized_text')
     original_text_object = OriginalTextHandler(original_text)
     summarized_text = original_text_object.summarize()
     args = {'summarized_text': summarized_text}
